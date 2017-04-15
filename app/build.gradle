@@ -15,17 +15,20 @@ android {
   }
   def string = "String"
   def endpoint = "ENDPOINT"
-  def appId = "APPID"
+  def publicKey = "PUBLIC_KEY"
+  def privateKey = "PRIVATE_KEY"
   buildTypes {
     debug {
-      buildConfigField string, appId, '"m2f_mvvm_android_debug"'
-      buildConfigField string, endpoint, '"https://rest.bandsintown.com/"'
+      buildConfigField string, endpoint, '"http://gateway.marvel.com"'
+      buildConfigField string, publicKey, '"6a7ed890b4b941a925202a5630d5b162"'
+      buildConfigField string, privateKey, '"0f1d0fdf46a0bf32f962b0b9997233c0395cdf8e"'
     }
     release {
       minifyEnabled false
       proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-      buildConfigField string, endpoint, '"https://rest.bandsintown.com/"'
-      buildConfigField string, appId, '"m2f_mvvm_android_release"'
+      buildConfigField string, endpoint, '"http://gateway.marvel.com"'
+      buildConfigField string, publicKey, '"6a7ed890b4b941a925202a5630d5b162"'
+      buildConfigField string, privateKey, '"0f1d0fdf46a0bf32f962b0b9997233c0395cdf8e"'
     }
   }
 
