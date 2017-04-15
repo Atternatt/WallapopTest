@@ -14,6 +14,7 @@ class ComicRepositoryImpl
 
     override fun getComicsForCharacter(characterId: Int): Flowable<ComicList> {
         return Flowable.merge(comicDatasource.map { it.getComicsForCharacter(characterId) })
+                .map { it.comics }
                 .first(ComicList(0, "", listOf()))
                 .toFlowable()
     }
