@@ -1,4 +1,4 @@
-package com.m2f.wallapop.domain.comic
+package com.m2f.wallapop.domain.comic.model
 
 /**
  * @author Marc Moreno

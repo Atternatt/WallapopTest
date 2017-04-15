@@ -1,4 +1,4 @@
-package com.m2f.wallapop.data.comics
+package com.m2f.wallapop.data.comics.model
 
 import com.google.gson.annotations.SerializedName
 
