@@ -44,8 +44,9 @@ class NetworkModule {
 
     @Provides
     @Singleton
-    fun providesHttpClient(): OkHttpClient {
+    fun providesHttpClient(interceptor: Interceptor): OkHttpClient {
         return OkHttpClient.Builder()
+                .addInterceptor(interceptor)
                 .build()
     }
 

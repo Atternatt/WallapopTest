@@ -1,6 +1,7 @@
 package com.m2f.wallapop.data.comics.repository
 
-import com.m2f.wallapop.domain.comic.model.ComicResult
+import com.jakewharton.retrofit2.adapter.rxjava2.Result
+import com.m2f.wallapop.data.comics.model.ComicResultDTO
 import io.reactivex.Flowable
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -12,5 +13,5 @@ import retrofit2.http.Path
 interface ComicsGateway {
 
     @GET("v1/public/characters/{characterId}/comics")
-    fun getComicsForCharacter(@Path("characterId") characterId: Int) : Flowable<ComicResult>
+    fun getComicsForCharacter(@Path("characterId") characterId: Int) : Flowable<Result<ComicResultDTO>>
 }
