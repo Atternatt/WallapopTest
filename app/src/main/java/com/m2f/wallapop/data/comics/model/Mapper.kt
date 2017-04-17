@@ -1,8 +1,6 @@
 package com.m2f.wallapop.data.comics.model
 
 import com.m2f.wallapop.domain.comic.model.Comic
-import com.m2f.wallapop.domain.comic.model.ComicList
-import com.m2f.wallapop.domain.comic.model.ComicResult
 import com.m2f.wallapop.domain.comic.model.Thumbnail
 
 /**
@@ -11,29 +9,14 @@ import com.m2f.wallapop.domain.comic.model.Thumbnail
  */
 
 fun ComicDTO.toBO(): Comic {
-    return Comic(
-            resourceURI,
-            name)
-}
-
-fun ComicListDTO.toBO(): ComicList {
-    return ComicList(
-            available,
-            collectionUri,
-            items.map { it.toBO() })
+    return Comic(description,
+            title,
+            thumbnail.toBO())
 }
 
 fun ThumbnailDTO.toBO(): Thumbnail {
     return Thumbnail(
             path,
             extension
-    )
-}
-
-fun ComicResultDTO.toBO(): ComicResult {
-    return ComicResult(
-            resourceURI,
-            thumbnail.toBO(),
-            comics.toBO()
     )
 }

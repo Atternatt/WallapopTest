@@ -8,9 +8,11 @@ import dagger.Provides
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.ResponseBody
+import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Converter
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.converter.scalars.ScalarsConverterFactory
 import java.lang.reflect.Type
 import java.util.*
 import javax.inject.Singleton
@@ -31,7 +33,7 @@ class NetworkModule {
             val url = it.request()
                     .url()
                     .newBuilder()
-                    .addQueryParameter("apiKey", BuildConfig.PUBLIC_KEY)
+                    .addQueryParameter("apikey", BuildConfig.PUBLIC_KEY)
                     .addQueryParameter("ts", ts.toString())
                     .addQueryParameter("hash", "$ts${BuildConfig.PRIVATE_KEY}${BuildConfig.PUBLIC_KEY}".md5())
                     .build()
@@ -47,6 +49,12 @@ class NetworkModule {
     fun providesHttpClient(interceptor: Interceptor): OkHttpClient {
         return OkHttpClient.Builder()
                 .addInterceptor(interceptor)
+                .apply {
+                    if (BuildConfig.DEBUG) {
+                        addNetworkInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
+                    }
+                }
+
                 .build()
     }
 
@@ -64,6 +72,7 @@ class NetworkModule {
 
         return Retrofit.Builder()
                 .addConverterFactory(nullOnEmptyConverterFactory)
+                .addConverterFactory(ScalarsConverterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .client(httpClient)

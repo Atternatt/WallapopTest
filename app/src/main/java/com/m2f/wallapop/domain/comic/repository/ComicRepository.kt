@@ -1,6 +1,6 @@
 package com.m2f.wallapop.domain.comic.repository
 
-import com.m2f.wallapop.domain.comic.model.ComicList
+import com.m2f.wallapop.domain.comic.model.Comic
 import io.reactivex.Flowable
 
 /**
@@ -9,5 +9,5 @@ import io.reactivex.Flowable
  */
 interface ComicRepository {
 
-    fun getComicsForCharacter(characterId: Int): Flowable<ComicList>
+    fun getComicsForCharacter(characterId: Int): Flowable<List<Comic>>
 }

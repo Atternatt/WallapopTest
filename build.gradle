@@ -24,6 +24,7 @@ buildscript {
   ext.rxBindingVersion = '2.0.0'
   ext.drawableDslVersion = '0.1.0'
   ext.materialSearchViewVersion = '1.2.0'
+  ext.loggerVersion = '3.4.1'
 
   repositories {
     jcenter()

@@ -19,14 +19,14 @@ android {
   def privateKey = "PRIVATE_KEY"
   buildTypes {
     debug {
-      buildConfigField string, endpoint, '"http://gateway.marvel.com"'
+      buildConfigField string, endpoint, '"https://gateway.marvel.com"'
       buildConfigField string, publicKey, '"6a7ed890b4b941a925202a5630d5b162"'
       buildConfigField string, privateKey, '"0f1d0fdf46a0bf32f962b0b9997233c0395cdf8e"'
     }
     release {
       minifyEnabled false
       proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-      buildConfigField string, endpoint, '"http://gateway.marvel.com"'
+      buildConfigField string, endpoint, '"https://gateway.marvel.com"'
       buildConfigField string, publicKey, '"6a7ed890b4b941a925202a5630d5b162"'
       buildConfigField string, privateKey, '"0f1d0fdf46a0bf32f962b0b9997233c0395cdf8e"'
     }
@@ -72,6 +72,9 @@ dependencies {
   compile "com.squareup.retrofit2:retrofit:$retrofitVersion"
   compile "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:$retrofitAdapterVersion"
   compile "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+  compile "com.squareup.okhttp3:logging-interceptor:$loggerVersion"
+  compile "com.squareup.retrofit2:converter-scalars:$retrofitVersion"
+
 
   //other
   compile "com.github.infotech-group:android-drawable-dsl:$drawableDslVersion"
