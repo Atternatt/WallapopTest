@@ -2,8 +2,8 @@ package com.m2f.wallapop.presentation.comics
 
 import com.m2f.wallapop.main.di.ApplicationComponent
 import com.m2f.wallapop.main.di.CustomScope
-import com.m2f.wallapop.presentation.ComicDetailActivity
-import com.m2f.wallapop.presentation.ComicListActivity
+import com.m2f.wallapop.presentation.comics.ComicDetailActivity
+import com.m2f.wallapop.presentation.comics.ComicListActivity
 import dagger.Component
 
 /**

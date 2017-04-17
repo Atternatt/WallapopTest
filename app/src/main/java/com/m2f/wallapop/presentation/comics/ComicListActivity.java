@@ -1,4 +1,4 @@
-package com.m2f.wallapop.presentation;
+package com.m2f.wallapop.presentation.comics;
 
 import android.content.Context;
 import android.content.Intent;

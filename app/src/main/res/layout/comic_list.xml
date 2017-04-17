@@ -9,6 +9,6 @@
     android:layout_marginLeft="16dp"
     android:layout_marginRight="16dp"
     app:layoutManager="LinearLayoutManager"
-    tools:context="com.m2f.wallapop.presentation.ComicListActivity"
+    tools:context="com.m2f.wallapop.presentation.comics.ComicListActivity"
     tools:listitem="@layout/comic_list_content"
     />

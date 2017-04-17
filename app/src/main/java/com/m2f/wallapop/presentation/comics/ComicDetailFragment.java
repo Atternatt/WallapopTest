@@ -1,4 +1,4 @@
-package com.m2f.wallapop.presentation;
+package com.m2f.wallapop.presentation.comics;
 
 import android.app.Activity;
 import android.support.design.widget.CollapsingToolbarLayout;
