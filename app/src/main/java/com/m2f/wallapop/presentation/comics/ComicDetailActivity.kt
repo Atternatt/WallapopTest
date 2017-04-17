@@ -24,7 +24,7 @@ class ComicDetailActivity : AppCompatActivity() {
                     ComicDetailFragment.COMIC_ID))
             val fragment = ComicDetailFragment()
             fragment.arguments = arguments
-            supportFragmentManager.beginTransaction().add(R.id.comic_detail_container, fragment).commit()
+            fragmentManager.beginTransaction().add(R.id.comic_detail_container, fragment).commit()
         }
     }
 

@@ -4,6 +4,9 @@ import android.app.Application
 import android.content.Context
 import android.os.StrictMode
 import com.m2f.wallapop.BuildConfig
+import com.m2f.wallapop.main.di.ApplicationComponent
+import com.m2f.wallapop.main.di.ApplicationModule
+import com.m2f.wallapop.main.di.DaggerApplicationComponent
 
 /**
  * @author Marc Moreno
@@ -16,11 +19,11 @@ class WallapopApplication: Application() {
             private set
     }
 
-//    val applicationComponent: ApplicationComponent by lazy {
-//        DaggerApplicationComponent.builder()
-//                .applicationModule(ApplicationModule(this))
-//                .build()
-//    }
+    val applicationComponent: ApplicationComponent by lazy {
+        DaggerApplicationComponent.builder()
+                .applicationModule(ApplicationModule(this))
+                .build()
+    }
 
     override fun onCreate() {
         super.onCreate()
